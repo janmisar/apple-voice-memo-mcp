@@ -31,8 +31,16 @@
     "claude",
     "ai"
   ],
-  "author": "",
+  "author": "John Wulff",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jwulff/apple-voice-memo-mcp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jwulff/apple-voice-memo-mcp/issues"
+  },
+  "homepage": "https://github.com/jwulff/apple-voice-memo-mcp#readme",
   "engines": {
     "node": ">=18.0.0"
   },
@@ -44,6 +52,7 @@
   "devDependencies": {
     "@types/better-sqlite3": "^7.6.11",
     "@types/node": "^22.0.0",
+    "@vitest/coverage-v8": "^2.1.9",
     "eslint": "^9.0.0",
     "prettier": "^3.0.0",
     "typescript": "^5.7.0",

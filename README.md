@@ -33,14 +33,63 @@ npx apple-voice-memo-mcp
 
 ### Claude Desktop
 
-Add to your `claude_desktop_config.json`:
+Add to your Claude Desktop config file:
+
+**macOS**: `~/Library/Application Support/Claude/claude_desktop_config.json`
 
 ```json
 {
   "mcpServers": {
-    "voice-memos": {
+    "apple-voice-memo-mcp": {
       "command": "npx",
       "args": ["-y", "apple-voice-memo-mcp"]
+    }
+  }
+}
+```
+
+After editing, restart Claude Desktop.
+
+### Claude Code (CLI)
+
+For Claude Code, add to your project's `.mcp.json` file:
+
+```json
+{
+  "mcpServers": {
+    "apple-voice-memo-mcp": {
+      "command": "npx",
+      "args": ["-y", "apple-voice-memo-mcp"]
+    }
+  }
+}
+```
+
+Or for user-wide configuration, add to `~/.claude/settings.json`:
+
+```json
+{
+  "mcpServers": {
+    "apple-voice-memo-mcp": {
+      "command": "npx",
+      "args": ["-y", "apple-voice-memo-mcp"]
+    }
+  }
+}
+```
+
+**Tip**: Use `/mcp` in Claude Code to verify the server is connected.
+
+### Local Development Setup
+
+If running from source instead of npm:
+
+```json
+{
+  "mcpServers": {
+    "apple-voice-memo-mcp": {
+      "command": "node",
+      "args": ["/path/to/apple-voice-memo-mcp/dist/index.js"]
     }
   }
 }

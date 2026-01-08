@@ -24,9 +24,20 @@ describe("dates utility", () => {
   });
 
   describe("coreDataToISO", () => {
-    it("should return an ISO 8601 string", () => {
+    it("should return an ISO 8601 string with timezone offset", () => {
       const iso = coreDataToISO(0);
-      expect(iso).toBe("2001-01-01T00:00:00.000Z");
+      // Should be in format: YYYY-MM-DDTHH:mm:ss.sss+HH:MM or -HH:MM
+      expect(iso).toMatch(/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\.\d{3}[+-]\d{2}:\d{2}$/);
+      // Parsing it back should give the correct UTC time (Jan 1, 2001 00:00:00 UTC)
+      const parsed = new Date(iso);
+      expect(parsed.toISOString()).toBe("2001-01-01T00:00:00.000Z");
+    });
+
+    it("should represent the correct point in time", () => {
+      const timestamp = 757382400; // Jan 1, 2025 00:00:00 UTC
+      const iso = coreDataToISO(timestamp);
+      const parsed = new Date(iso);
+      expect(parsed.toISOString()).toBe("2025-01-01T00:00:00.000Z");
     });
   });
 

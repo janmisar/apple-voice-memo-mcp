@@ -7,7 +7,15 @@ export default defineConfig({
     include: ["tests/**/*.test.ts"],
     coverage: {
       reporter: ["text", "json", "html"],
-      exclude: ["node_modules/", "dist/", "tests/"],
+      exclude: [
+        "node_modules/",
+        "dist/",
+        "tests/",
+        "*.config.ts",
+        "*.config.js",
+        "src/index.ts", // Entry point bootstrap
+        "src/types/**", // TypeScript type definitions only
+      ],
     },
   },
 });
