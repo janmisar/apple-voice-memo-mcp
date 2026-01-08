@@ -160,6 +160,16 @@ npm run inspector
 - Older macOS versions don't have automatic transcription
 - Use the `transcribe_memo` tool to generate a transcript via SFSpeechRecognizer
 
+### Native module binding errors
+
+If you see errors about missing `better_sqlite3.node` bindings:
+
+```bash
+npm rebuild better-sqlite3
+```
+
+This recompiles the native module for your current Node.js version.
+
 ## License
 
 MIT
