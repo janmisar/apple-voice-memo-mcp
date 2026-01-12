@@ -2,6 +2,8 @@
 
 An MCP (Model Context Protocol) server that provides programmatic access to Apple Voice Memos on macOS. Use this to let Claude and other AI assistants interact with your voice recordings.
 
+Pairs well with [whisper-mcp](https://github.com/jwulff/whisper-mcp) for local transcription.
+
 ## Features
 
 - **List voice memos** - Browse all your voice memos with metadata
